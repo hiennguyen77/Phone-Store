@@ -1,0 +1,32 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #000000;
+    --content-color: #333;
+    --border-color: #5a5a5a;
+    --white-color: #ffffff;
+    --hover-color: #d60f0f;
+    --border-product: #e0dfdf;
+}
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+    font-family: 'Roboto', sans-serif;  
+    font-size: 1.6rem;
+    line-height: 1.7;
+    text-rendering: optimizeSpeed;
+    margin: 0;
+    padding: 0;
+}
+
+p, span, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+
+}
