@@ -1,6 +1,7 @@
 import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
 import { BsFillBagFill } from "react-icons/bs";
+import SearchList from "./SearchList/SearchList";
 
 const Header = () => {
   return (
@@ -15,6 +16,9 @@ const Header = () => {
             <i>
               <BiSearch />
             </i>
+            <div className="searchList">
+              <SearchList />
+            </div>
           </div>
           <div className="cart_icon">
             <i>
