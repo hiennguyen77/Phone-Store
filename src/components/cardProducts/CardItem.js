@@ -1,6 +1,25 @@
 import "./CardItem.scss";
+import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { fetchProductFailure, fetchProductSuccess } from "../../redux/actions";
 
 const CardItem = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/products?_page=10");
+        // dispatch(fetchProductSuccess(res.data));
+        console.log(res.data);
+      } catch (error) {
+        console.log(error.message);
+        dispatch(fetchProductFailure(error.message));
+      }
+    };
+    getProducts();
+  }, []);
+
   return (
     <>
       <div className="cardItem_wrap">
