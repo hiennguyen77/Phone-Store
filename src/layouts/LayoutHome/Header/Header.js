@@ -1,9 +1,19 @@
+import { useState } from "react";
+// import { useDispatch } from "react-redux";
 import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
 import { BsFillBagFill } from "react-icons/bs";
 import SearchList from "./SearchList/SearchList";
 
 const Header = () => {
+  const [inputText, setInputText] = useState("");
+  const [openSearchList, setOpenSearchList] = useState(false);
+  // const dispatch = useDispatch();
+
+  const handleSearchChange = (e) => {
+    setInputText(e.target.value);
+  };
+
   return (
     <>
       <div className="header_wrap grid wide ">
@@ -12,13 +22,20 @@ const Header = () => {
             <h1>Phone Store</h1>
           </div>
           <div className="input_search">
-            <input name="search" type="text" placeholder="Bạn cần tìm..." />
+            <input
+              onChange={handleSearchChange}
+              value={inputText}
+              name="search"
+              placeholder="Bạn cần tìm..."
+            />
             <i>
               <BiSearch />
             </i>
-            <div className="searchList">
-              <SearchList />
-            </div>
+            {openSearchList && (
+              <div className="searchList">
+                <SearchList />
+              </div>
+            )}
           </div>
           <div className="cart_icon">
             <i>

@@ -1,0 +1,19 @@
+.PriceFilter_wrap {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  p {
+    margin-right: 10px;
+    color: var(--content-color);
+  }
+
+  .price_select {
+    width: 150px;
+
+    .select {
+      font-size: 14px;
+      color: var(--content-color);
+    }
+  }
+}
