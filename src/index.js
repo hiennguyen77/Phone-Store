@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles/GlobalStyle";
 import App from "./App";
+import "./Grid/Grid.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
