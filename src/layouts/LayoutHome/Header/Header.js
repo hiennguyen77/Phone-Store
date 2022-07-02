@@ -1,17 +1,18 @@
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
 import { BsFillBagFill } from "react-icons/bs";
 import SearchList from "./SearchList/SearchList";
+import { searchProduct } from "../../../redux/actions";
 
 const Header = () => {
   const [inputText, setInputText] = useState("");
-  const [openSearchList, setOpenSearchList] = useState(false);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  const handleSearchChange = (e) => {
+  const handleSearchText = (e) => {
     setInputText(e.target.value);
+    dispatch(searchProduct(e.target.value));
   };
 
   return (
@@ -23,15 +24,14 @@ const Header = () => {
           </div>
           <div className="input_search">
             <input
-              onChange={handleSearchChange}
+              onChange={handleSearchText}
               value={inputText}
-              name="search"
               placeholder="Bạn cần tìm..."
             />
             <i>
               <BiSearch />
             </i>
-            {openSearchList && (
+            {inputText && (
               <div className="searchList">
                 <SearchList />
               </div>

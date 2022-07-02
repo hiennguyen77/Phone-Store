@@ -4,6 +4,7 @@ const initialState = {
   products: [],
   productErrorMessage: null,
   showMore: 15,
+  searchProduct: "",
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -25,6 +26,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         showMore: action.payload,
+      };
+    }
+    case types.SEARCH_PRODUCT: {
+      return {
+        ...state,
+        searchProduct: action.payload,
       };
     }
 
