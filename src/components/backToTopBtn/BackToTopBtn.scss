@@ -1,0 +1,20 @@
+.backToTop_wrap {
+  position: fixed;
+  bottom: 80px;
+  right: 80px;
+
+  button {
+    font-size: 3rem;
+    color: var(--white-color);
+    background-color: var(--primary);
+    border: none;
+    padding: 8px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.2s linear;
+    }
+  }
+}

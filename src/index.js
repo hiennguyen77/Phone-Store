@@ -7,6 +7,8 @@ import App from "./App";
 import "./Grid/Grid.css";
 import store from "./redux/store";
 import { Provider } from "react-redux";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import BackToTopBtn from "./components/backToTopBtn/BackToTopBtn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +16,9 @@ root.render(
     <BrowserRouter>
       <GlobalStyles>
         <Provider store={store}>
+          <ScrollToTop />
           <App />
+          <BackToTopBtn />
         </Provider>
       </GlobalStyles>
     </BrowserRouter>
