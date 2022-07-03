@@ -23,5 +23,9 @@
         display: block;
       }
     }
+
+    .brand_item.active {
+      border: 2px solid var(--primary);
+    }
   }
 }

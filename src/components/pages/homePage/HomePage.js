@@ -6,7 +6,11 @@ import PriceFilter from "./Filter/PriceFilter";
 import SortFilter from "./Filter/SortFilter";
 import CardItem from "../../cardProducts/CardItem";
 import { useSelector } from "react-redux/es/exports";
-import { productSelector, showMoreSelector } from "../../../redux/selector";
+import {
+  productSelector,
+  showMoreSelector,
+  filterBrandSelector,
+} from "../../../redux/selector";
 import { useEffect } from "react";
 import {
   fetchProductFailure,
@@ -18,6 +22,13 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const products = useSelector(productSelector);
   const showMore = useSelector(showMoreSelector);
+  const filterBrand = useSelector(filterBrandSelector);
+
+  const filterProduct = products.filter((product) => {
+    return filterBrand.includes(product.brandId);
+  });
+
+  console.log(filterProduct);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -48,16 +59,29 @@ const HomePage = () => {
         </div>
 
         <div className="product row no-gutters">
-          {products.slice(0, showMore).map((product, index) => (
-            <div key={index} className="col l-2-4">
-              <CardItem
-                image={product.image}
-                name={product.name}
-                price={product.price}
-                crossPrice={product.crossPrice}
-              />
-            </div>
-          ))}
+          {filterProduct.length > 0
+            ? filterProduct.slice(0, showMore).map((product, index) => (
+                <div key={index} className="col l-2-4">
+                  <CardItem
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    crossPrice={product.crossPrice}
+                    id={product.id}
+                  />
+                </div>
+              ))
+            : products.slice(0, showMore).map((product, index) => (
+                <div key={index} className="col l-2-4">
+                  <CardItem
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    crossPrice={product.crossPrice}
+                    id={product.id}
+                  />
+                </div>
+              ))}
         </div>
 
         <div className="viewMoreBtn">

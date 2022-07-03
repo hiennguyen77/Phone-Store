@@ -10,6 +10,6 @@ const DetailPage = lazy(() =>
 
 export const publicRoutes = [
   { path: "/", component: HomePage },
-  { path: "/product/Detail", component: DetailPage },
-  { path: "/cart", component: CartPage },
+  { path: "detail/:productId", component: DetailPage },
+  { path: "cart", component: CartPage },
 ];

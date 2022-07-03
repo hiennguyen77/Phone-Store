@@ -1,6 +1,18 @@
 .cardItem_wrap {
   width: 100%;
   border: 1px solid var(--border-color);
+  cursor: pointer;
+
+  &:hover {
+    img {
+      position: relative;
+      top: -5px;
+    }
+
+    .cardItem_name {
+      color: var(--primary);
+    }
+  }
 
   .cardItem_container {
     padding: 30px;

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
@@ -11,7 +13,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleSearchText = (e) => {
-    setInputText(e.target.value);
+    setInputText(e.target.value.trim());
     dispatch(searchProduct(e.target.value));
   };
 
@@ -19,9 +21,11 @@ const Header = () => {
     <>
       <div className="header_wrap grid wide ">
         <div className="header_container">
-          <div className="logo">
-            <h1>Phone Store</h1>
-          </div>
+          <Link className="logo_link" to="/">
+            <div className="logo">
+              <h1>Phone Store</h1>
+            </div>
+          </Link>
           <div className="input_search">
             <input
               onChange={handleSearchText}
@@ -37,12 +41,14 @@ const Header = () => {
               </div>
             )}
           </div>
-          <div className="cart_icon">
-            <i>
-              <BsFillBagFill />
-            </i>
-            <span>(4)</span>
-          </div>
+          <Link className="cart_link" to="cart">
+            <div className="cart_icon">
+              <i>
+                <BsFillBagFill />
+              </i>
+              <span>(4)</span>
+            </div>
+          </Link>
         </div>
       </div>
     </>

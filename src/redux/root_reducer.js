@@ -5,6 +5,7 @@ const initialState = {
   productErrorMessage: null,
   showMore: 15,
   searchProduct: "",
+  filterBrand: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -32,6 +33,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         searchProduct: action.payload,
+      };
+    }
+    case types.FILTER_BRAND: {
+      return {
+        ...state,
+        filterBrand: [action.payload],
       };
     }
 

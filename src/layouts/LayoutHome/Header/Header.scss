@@ -6,6 +6,10 @@
     align-items: center;
     justify-content: space-around;
 
+    .logo_link {
+      text-decoration: none;
+    }
+
     .logo,
     .cart_icon {
       color: var(--white-color);
@@ -38,6 +42,10 @@
       right: -111px;
       z-index: 2;
     }
+  }
+
+  .cart_link {
+    text-decoration: none;
   }
   .cart_icon {
     i {
