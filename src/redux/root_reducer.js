@@ -36,10 +36,18 @@ const rootReducer = (state = initialState, action) => {
       };
     }
     case types.FILTER_BRAND: {
-      return {
-        ...state,
-        filterBrand: [action.payload],
-      };
+      const { filterBrand } = state;
+      if (state.filterBrand.includes(action.payload)) {
+        return {
+          ...state,
+          filterBrand: filterBrand.filter((x) => x !== action.payload),
+        };
+      } else {
+        return {
+          ...state,
+          filterBrand: [action.payload],
+        };
+      }
     }
 
     default:
