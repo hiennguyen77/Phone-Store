@@ -1,4 +1,6 @@
 import React from "react";
+import { Suspense } from "react";
+
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
@@ -17,6 +19,7 @@ root.render(
       <GlobalStyles>
         <Provider store={store}>
           <ScrollToTop />
+
           <App />
           <BackToTopBtn />
         </Provider>

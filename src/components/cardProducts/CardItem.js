@@ -9,6 +9,7 @@ const CardItem = (props) => {
           <div className="cardItem_img">
             <img src={image} alt="" />
           </div>
+
           <p className="cardItem_name">{name}</p>
           <div className="cardItem_price">
             <span>{price}đ</span>

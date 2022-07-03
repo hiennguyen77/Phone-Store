@@ -1,0 +1,73 @@
+.modal {
+  width: 100%;
+  position: fixed;
+  background-color: #000;
+  opacity: 0.5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+}
+
+.loading_wrap {
+  display: flex;
+  position: fixed;
+  z-index: 99;
+  top: 40%;
+  left: 40%;
+  align-items: center;
+
+  .box {
+    background-color: var(--primary);
+    margin: 0 3px;
+  }
+  .box1 {
+    width: 80px;
+    height: 90px;
+    animation-name: box1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  .box2 {
+    width: 60px;
+    height: 70px;
+    animation-name: box2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    // animation-delay: 1s;
+  }
+  .box3 {
+    width: 40px;
+    height: 50px;
+    animation-name: box3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    // animation-delay: 1.5s;
+  }
+}
+
+@keyframes box1 {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes box2 {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes box3 {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

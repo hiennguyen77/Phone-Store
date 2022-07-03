@@ -13,6 +13,7 @@ import {
   fetchProductSuccess,
 } from "../../../redux/actions";
 import ViewMore from "./viewMoreBtn/ViewMore";
+
 const HomePage = () => {
   const dispatch = useDispatch();
   const products = useSelector(productSelector);
@@ -60,7 +61,7 @@ const HomePage = () => {
         </div>
 
         <div className="viewMoreBtn">
-          <ViewMore />
+          {products.length > 0 ? <ViewMore /> : ""}
         </div>
       </div>
     </>

@@ -1,8 +1,10 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 import LayoutHome from "./layouts/LayoutHome/LayoutHome";
 import { publicRoutes } from "./routes/index";
+import Loading from "./components/loading/Loading";
+
 function App() {
   return (
     <div className="App">
@@ -21,7 +23,9 @@ function App() {
               path={route.path}
               element={
                 <Layout>
-                  <Page />
+                  <Suspense fallback={<Loading />}>
+                    <Page />
+                  </Suspense>
                 </Layout>
               }
             />
