@@ -39,6 +39,7 @@ const HomePage = () => {
   }, []);
 
   // console.log(">>>product", products);
+  // console.log(">>>product", showProduct);
 
   return (
     <>

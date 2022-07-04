@@ -1,4 +1,8 @@
 import { types } from "./actions";
+import {
+  filterPriceData,
+  sorting,
+} from "../components/pages/homePage/Filter/data";
 
 const initialState = {
   products: [],
@@ -6,6 +10,8 @@ const initialState = {
   showMore: 15,
   searchProduct: "",
   filterBrand: [],
+  filterPrice: filterPriceData[0],
+  filterSorting: sorting[0],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -48,6 +54,19 @@ const rootReducer = (state = initialState, action) => {
           filterBrand: [action.payload],
         };
       }
+    }
+
+    case types.SET_FILTER_PRICE: {
+      return {
+        ...state,
+        filterPrice: action.payload,
+      };
+    }
+    case types.SET_SORTING: {
+      return {
+        ...state,
+        filterSorting: action.payload,
+      };
     }
 
     default:

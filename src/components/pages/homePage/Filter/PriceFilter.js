@@ -1,14 +1,17 @@
 import Select from "react-select";
-import { useState } from "react";
-import "./Filter.scss";
 
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { setFilterPrice } from "../../../../redux/actions";
+import { filterPriceSelector } from "../../../../redux/selector";
+
+import "./Filter.scss";
+import { filterPriceData } from "./data";
+
 const PriceFilter = () => {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const dispatch = useDispatch();
+  const filterPrice = useSelector(filterPriceSelector);
+  // console.log(filterPrice); => {label:, value:}
+
   return (
     <>
       <div className="PriceFilter_wrap">
@@ -17,9 +20,9 @@ const PriceFilter = () => {
           <Select
             className="select"
             isSearchable={false}
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={options}
+            value={filterPrice}
+            onChange={(payload) => dispatch(setFilterPrice(payload))}
+            options={filterPriceData}
           />
         </div>
       </div>

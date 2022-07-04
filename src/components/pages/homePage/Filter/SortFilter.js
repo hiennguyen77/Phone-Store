@@ -1,14 +1,15 @@
 import Select from "react-select";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./Filter.scss";
+import { sorting } from "./data";
+import { setSorting } from "../../../../redux/actions";
+import { filterSortingSelector } from "../../../../redux/selector";
 
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
 const SortFilter = () => {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const dispatch = useDispatch();
+  const filterSorting = useSelector(filterSortingSelector);
+  // console.log(filterSorting);
+
   return (
     <>
       <div className="PriceFilter_wrap">
@@ -17,9 +18,9 @@ const SortFilter = () => {
           <Select
             className="select"
             isSearchable={false}
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={options}
+            value={filterSorting}
+            onChange={(payload) => dispatch(setSorting(payload))}
+            options={sorting}
           />
         </div>
       </div>
