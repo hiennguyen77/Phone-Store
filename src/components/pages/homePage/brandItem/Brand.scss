@@ -25,7 +25,9 @@
     }
 
     .brand_item.active {
-      border: 2px solid var(--primary);
+      border: 1px solid #006eff;
+      z-index: 2;
+      transition: all 0.3s linear;
     }
   }
 }

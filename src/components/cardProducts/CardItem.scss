@@ -3,10 +3,15 @@
   border: 1px solid var(--border-color);
   cursor: pointer;
 
+  img {
+    transition: transform 0.2s ease;
+  }
+
   &:hover {
     img {
-      position: relative;
-      top: -5px;
+      // position: relative;
+      // top: -5px;
+      transform: translateY(-5px);
     }
 
     .cardItem_name {

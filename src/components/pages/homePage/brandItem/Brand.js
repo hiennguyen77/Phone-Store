@@ -1,11 +1,14 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./Brand.scss";
 import { brands } from "../../../../mock-data/brand";
 import { filterBrand } from "../../../../redux/actions";
+import { filterBrandSelector } from "../../../../redux/selector";
 
 const Brand = () => {
   const dispatch = useDispatch();
+  const brandFilter = useSelector(filterBrandSelector);
+  // console.log(brand);
 
   const handleClick = (id) => {
     const brandId = brands.find((brand) => {
@@ -22,7 +25,11 @@ const Brand = () => {
             <div
               onClick={() => handleClick(brand.id)}
               title={brand.name}
-              className=" brand_item"
+              className={
+                brandFilter.includes(brand.id)
+                  ? "brand_item active"
+                  : "brand_item"
+              }
               key={brand.id}
             >
               <img src={brand.image} alt="brandImg" />

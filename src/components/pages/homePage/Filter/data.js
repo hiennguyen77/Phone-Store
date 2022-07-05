@@ -28,7 +28,7 @@ export const filterPriceData = [
 export const sorting = [
   {
     label: "Nổi bật",
-    value: (a, b) => 0,
+    value: null,
   },
   {
     label: "Giá tăng dần",

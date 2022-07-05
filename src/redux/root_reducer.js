@@ -15,7 +15,7 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  // console.log(state, action);
+  console.log(state, action);
   switch (action.type) {
     case types.FETCH_PRODUCT_SUCCESS: {
       return {
@@ -63,6 +63,7 @@ const rootReducer = (state = initialState, action) => {
       };
     }
     case types.SET_SORTING: {
+      console.log(action.payload);
       return {
         ...state,
         filterSorting: action.payload,
