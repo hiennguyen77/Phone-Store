@@ -14,7 +14,7 @@ export const productSelector = (state) => {
   // sorting
   if (state.filterSorting.label !== "Nổi bật") {
     console.log(state.products.sort(state.filterSorting.value));
-    result = state.products.sort(state.filterSorting.value);
+    result = result.sort(state.filterSorting.value);
   }
   // pipeline
 
@@ -39,3 +39,4 @@ export const searchSelector = (state) => state.searchProduct;
 export const filterBrandSelector = (state) => state.filterBrand;
 export const filterPriceSelector = (state) => state.filterPrice;
 export const filterSortingSelector = (state) => state.filterSorting;
+export const detailProductSelector = (state) => state.detailProduct;

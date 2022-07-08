@@ -1,11 +1,24 @@
 import "./CardItem.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { formatVnd } from "../../helper";
+import { setDetailProduct } from "../../redux/actions";
 
 const CardItem = (props) => {
   const { image, name, price, crossPrice, id } = props;
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleToDetail = (id) => {
     navigate(`detail/ ${id}`);
+    dispatch(
+      setDetailProduct({
+        name,
+        image,
+        price,
+        crossPrice,
+        id,
+      })
+    );
   };
   return (
     <>
@@ -20,8 +33,10 @@ const CardItem = (props) => {
           </div>
           <p className="cardItem_name">{name}</p>
           <div className="cardItem_price">
-            <span>{price}đ</span>
-            <span className="sale_price">{crossPrice ? crossPrice : "0"}đ</span>
+            <span>{formatVnd(price)}</span>
+            <span className="sale_price">
+              {crossPrice ? formatVnd(crossPrice) : ""}
+            </span>
           </div>
         </div>
       </div>

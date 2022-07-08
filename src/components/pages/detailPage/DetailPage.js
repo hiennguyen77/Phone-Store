@@ -1,23 +1,28 @@
 import "./DetailPage.scss";
 import { detailData } from "./detail-data";
+import { useSelector } from "react-redux";
+import { detailProductSelector } from "../../../redux/selector";
+import { formatVnd } from "../../../helper";
 const DetailPage = () => {
+  const detailProduct = useSelector(detailProductSelector);
   return (
     <>
       <div className="detailPage_wrap grid wide">
-        <h1 className="detail_name">iPhone</h1>
+        <h1 className="detail_name">{detailProduct.name}</h1>
         <div className="row no-gutters">
           <div className="col l-6">
             <div className="detail_img">
-              <img
-                src="https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-red-600x600.jpg"
-                alt=""
-              />
+              <img src={detailProduct.image} alt="" />
             </div>
           </div>
           <div className="col l-6">
             <div className="detail_price">
-              <h1>199999</h1>
-              <h1>10000</h1>
+              <h1 className="detail_sale">{formatVnd(detailProduct.price)}</h1>
+              <h1 className="detail_through">
+                {detailProduct.crossPrice
+                  ? formatVnd(detailProduct.crossPrice)
+                  : ""}
+              </h1>
             </div>
             <div className="detail_parameter">
               <h1>Thông số kỹ thuật</h1>
@@ -28,6 +33,10 @@ const DetailPage = () => {
                 </div>
               ))}
             </div>
+
+            <button className="buy_btn">
+              <p>Mua ngay</p>
+            </button>
           </div>
         </div>
       </div>

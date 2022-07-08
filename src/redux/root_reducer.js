@@ -12,6 +12,7 @@ const initialState = {
   filterBrand: [],
   filterPrice: filterPriceData[0],
   filterSorting: sorting[0],
+  detailProduct: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -63,10 +64,15 @@ const rootReducer = (state = initialState, action) => {
       };
     }
     case types.SET_SORTING: {
-      console.log(action.payload);
       return {
         ...state,
         filterSorting: action.payload,
+      };
+    }
+    case types.DETAIL_PRODUCT: {
+      return {
+        ...state,
+        detailProduct: action.payload,
       };
     }
 

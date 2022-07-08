@@ -6,6 +6,7 @@ export const types = {
   FILTER_BRAND: "FILTER_BRAND",
   SET_FILTER_PRICE: "SET_FILTER_PRICE",
   SET_SORTING: "SET_SORTING",
+  DETAIL_PRODUCT: "DETAIL_PRODUCT",
 };
 
 export const fetchProductSuccess = (payload) => {
@@ -47,6 +48,12 @@ export const setFilterPrice = (payload) => {
 export const setSorting = (payload) => {
   return {
     type: types.SET_SORTING,
+    payload,
+  };
+};
+export const setDetailProduct = (payload) => {
+  return {
+    type: types.DETAIL_PRODUCT,
     payload,
   };
 };
