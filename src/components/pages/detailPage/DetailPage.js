@@ -1,10 +1,12 @@
 import "./DetailPage.scss";
+import { Link } from "react-router-dom";
 import { detailData } from "./detail-data";
 import { useSelector } from "react-redux";
 import { detailProductSelector } from "../../../redux/selector";
 import { formatVnd } from "../../../helper";
 const DetailPage = () => {
   const detailProduct = useSelector(detailProductSelector);
+
   return (
     <>
       <div className="detailPage_wrap grid wide">
@@ -33,10 +35,11 @@ const DetailPage = () => {
                 </div>
               ))}
             </div>
-
-            <button className="buy_btn">
-              <p>Mua ngay</p>
-            </button>
+            <Link className='link_btn' to="/cart">
+              <button className="buy_btn">
+                <p>Mua ngay</p>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

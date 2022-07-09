@@ -45,7 +45,7 @@
   .parameter {
     color: var(--content-color);
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     border-bottom: 1px solid var(--border-color);
     padding: 4px 0;
     span {
@@ -61,8 +61,13 @@
     font-weight: 400;
     color: var(--white-color);
     margin-top: 30px;
-    background-color: var(--btn-color);
+    background-image: linear-gradient(45deg, #fc4a1a, #f7b733);
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .link_btn {
+    text-decoration: none;
   }
 }

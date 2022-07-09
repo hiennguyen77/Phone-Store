@@ -1,3 +1,8 @@
+.card_link {
+  text-decoration: none;
+  color: var(--content-color);
+}
+
 .cardItem_wrap {
   width: 100%;
   border: 1px solid var(--border-color);
@@ -16,6 +21,7 @@
 
     .cardItem_name {
       color: var(--primary);
+      transition: all 0.3s ease;
     }
   }
 
@@ -39,6 +45,9 @@
   }
 
   .cardItem_price {
+    span:nth-child(1) {
+      color: var(--primary);
+    }
     span {
       font-size: 16px;
       font-weight: 300;

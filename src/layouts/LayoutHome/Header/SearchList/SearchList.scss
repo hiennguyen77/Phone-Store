@@ -20,6 +20,15 @@
       }
 
       .searchList_name_price {
+        .price {
+          display: flex;
+          span:nth-child(2) {
+            text-decoration: line-through;
+          }
+          span:nth-child(1) {
+            color: var(--primary);
+          }
+        }
         p {
           font-size: 16px;
           font-weight: 500;

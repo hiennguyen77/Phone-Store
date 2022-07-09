@@ -37,11 +37,11 @@ const Header = () => {
             </i>
             {inputText && (
               <div className="searchList">
-                <SearchList />
+                <SearchList setInputText={setInputText} />
               </div>
             )}
           </div>
-          <Link className="cart_link" to="cart">
+          <Link className="cart_link" to="/cart">
             <div className="cart_icon">
               <i>
                 <BsFillBagFill />
