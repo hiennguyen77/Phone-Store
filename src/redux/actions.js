@@ -7,6 +7,9 @@ export const types = {
   SET_FILTER_PRICE: "SET_FILTER_PRICE",
   SET_SORTING: "SET_SORTING",
   DETAIL_PRODUCT: "DETAIL_PRODUCT",
+  ADD_PRODUCT_CART: "ADD_PRODUCT_CART",
+  DELETE_PRODUCT_CART: "DELETE_PRODUCT_CART",
+  TAKE_OUT1_PRODUCT_CART: "TAKE_OUT1_PRODUCT_CART",
 };
 
 export const fetchProductSuccess = (payload) => {
@@ -54,6 +57,24 @@ export const setSorting = (payload) => {
 export const setDetailProduct = (payload) => {
   return {
     type: types.DETAIL_PRODUCT,
+    payload,
+  };
+};
+export const setAddCartProduct = (payload) => {
+  return {
+    type: types.ADD_PRODUCT_CART,
+    payload,
+  };
+};
+export const setDeleteCartProduct = (payload) => {
+  return {
+    type: types.DELETE_PRODUCT_CART,
+    payload,
+  };
+};
+export const takeout1Product = (payload) => {
+  return {
+    type: types.TAKE_OUT1_PRODUCT_CART,
     payload,
   };
 };

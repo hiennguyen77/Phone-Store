@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
 import { BsFillBagFill } from "react-icons/bs";
 import SearchList from "./SearchList/SearchList";
 import { searchProduct } from "../../../redux/actions";
+import { cartProductSelector } from "../../../redux/selector";
 
 const Header = () => {
   const [inputText, setInputText] = useState("");
   const dispatch = useDispatch();
+  const cartProduct = useSelector(cartProductSelector);
 
   const handleSearchText = (e) => {
     setInputText(e.target.value.trim());
@@ -46,7 +48,7 @@ const Header = () => {
               <i>
                 <BsFillBagFill />
               </i>
-              <span>(4)</span>
+              <span>({cartProduct.length})</span>
             </div>
           </Link>
         </div>

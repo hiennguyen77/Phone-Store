@@ -40,3 +40,13 @@ export const filterBrandSelector = (state) => state.filterBrand;
 export const filterPriceSelector = (state) => state.filterPrice;
 export const filterSortingSelector = (state) => state.filterSorting;
 export const detailProductSelector = (state) => state.detailProduct;
+export const cartProductSelector = (state) => state.cartProduct;
+export const totalPriceSelector = (state) => {
+  const totalPrice = state.cartProduct.reduce(
+    (acc, cur) => acc + cur.amount * cur.price,
+    0
+  );
+  // console.log("total", totalPrice);
+
+  return totalPrice;
+};

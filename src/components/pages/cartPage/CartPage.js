@@ -1,10 +1,31 @@
 import "./CartPage.scss";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { TiDeleteOutline } from "react-icons/ti";
 import { AmountCounter } from "./amount/Amount";
+import {
+  cartProductSelector,
+  totalPriceSelector,
+} from "../../../redux/selector";
+
+import { formatVnd } from "../../../helper";
+
+import {
+  setAddCartProduct,
+  setDeleteCartProduct,
+  takeout1Product,
+} from "../../../redux/actions";
 
 const CartPage = () => {
+  const dispatch = useDispatch();
+  const cartProducts = useSelector(cartProductSelector);
+  const totalPrice = useSelector(totalPriceSelector);
+
+  const handleDeleteCart = (id) => {
+    dispatch(setDeleteCartProduct(id));
+  };
+
   return (
     <>
       <div className="cartPage_wrap ">
@@ -22,36 +43,44 @@ const CartPage = () => {
         </div>
 
         <div className="cart_container">
-          <div className="cart_list">
-            <div className="product_wrap">
-              <div className="pr_image">
-                <img
-                  src="https://cdn.tgdd.vn/Products/Images/42/204403/samsung-galaxy-a30s-green-600x600.jpg"
-                  alt=""
-                />
-                <div className="delete_pr">
-                  <i>
-                    <TiDeleteOutline />
-                  </i>
-                  <span>Xóa</span>
+          {cartProducts.map((cartProduct, index) => (
+            <div key={index} className="cart_list">
+              <div className="product_wrap">
+                <div className="pr_image">
+                  <img src={cartProduct.image} alt="" />
+                  <div
+                    onClick={() => handleDeleteCart(cartProduct.id)}
+                    className="delete_pr"
+                  >
+                    <i>
+                      <TiDeleteOutline />
+                    </i>
+                    <span>Xóa</span>
+                  </div>
+                </div>
+
+                <div className="name_amount">
+                  <h4>{cartProduct.name}</h4>
+                  <div className="cart_amount">
+                    <AmountCounter
+                      onIncrement={() =>
+                        dispatch(setAddCartProduct(cartProduct))
+                      }
+                      onDecrement={() => dispatch(takeout1Product(cartProduct))}
+                      amount={cartProduct.amount}
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="name_amount">
-                <h4>iphone 14</h4>
-                <div className="cart_amount">
-                  <AmountCounter />
-                </div>
+              <div className="price_pr">
+                <p>{formatVnd(cartProduct.price)}</p>
               </div>
             </div>
-
-            <div className="price_pr">
-              <p>1999,000,000 đ</p>
-            </div>
-          </div>
+          ))}
           <div className="total_price">
             <p>Tổng tiền:</p>
-            <p>199,000,000</p>
+            <p>{formatVnd(totalPrice)}</p>
           </div>
         </div>
       </div>

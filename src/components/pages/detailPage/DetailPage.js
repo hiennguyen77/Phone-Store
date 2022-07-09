@@ -1,11 +1,27 @@
 import "./DetailPage.scss";
 import { Link } from "react-router-dom";
 import { detailData } from "./detail-data";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { detailProductSelector } from "../../../redux/selector";
 import { formatVnd } from "../../../helper";
+import { setAddCartProduct } from "../../../redux/actions";
 const DetailPage = () => {
   const detailProduct = useSelector(detailProductSelector);
+  const dispatch = useDispatch();
+
+  const handleAddCart = () => {
+    const { name, image, price, crossPrice, id } = detailProduct;
+    dispatch(
+      setAddCartProduct({
+        name,
+        image,
+        price,
+        crossPrice,
+        id,
+        amount: 1,
+      })
+    );
+  };
 
   return (
     <>
@@ -35,8 +51,8 @@ const DetailPage = () => {
                 </div>
               ))}
             </div>
-            <Link className='link_btn' to="/cart">
-              <button className="buy_btn">
+            <Link className="link_btn" to="/cart">
+              <button onClick={handleAddCart} className="buy_btn">
                 <p>Mua ngay</p>
               </button>
             </Link>

@@ -13,10 +13,11 @@ const initialState = {
   filterPrice: filterPriceData[0],
   filterSorting: sorting[0],
   detailProduct: {},
+  cartProduct: [],
 };
 
 const rootReducer = (state = initialState, action) => {
-  console.log(state, action);
+  // console.log(state, action);
   switch (action.type) {
     case types.FETCH_PRODUCT_SUCCESS: {
       return {
@@ -73,6 +74,49 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         detailProduct: action.payload,
+      };
+    }
+
+    case types.ADD_PRODUCT_CART: {
+      const existingItem = state.cartProduct.find(
+        (item) => item.id === action.payload.id
+      );
+      if (existingItem) {
+        const newCart = state.cartProduct.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+
+        return {
+          ...state,
+          cartProduct: newCart,
+        };
+      }
+      return {
+        ...state,
+        cartProduct: [...state.cartProduct, action.payload],
+      };
+    }
+
+    case types.DELETE_PRODUCT_CART: {
+      const newCart = state.cartProduct.filter((x) => x.id !== action.payload);
+      // console.log(newCart);
+      return {
+        ...state,
+        cartProduct: newCart,
+      };
+    }
+
+    case types.TAKE_OUT1_PRODUCT_CART: {
+      const newCart = state.cartProduct.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, amount: item.amount - 1 }
+          : item
+      );
+      return {
+        ...state,
+        cartProduct: newCart,
       };
     }
 
