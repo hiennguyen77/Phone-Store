@@ -20,7 +20,6 @@ const Form = (props) => {
   const [provinces, setProvinces] = useState([]);
   const [district, setDistrict] = useState([]);
   const [wards, setWards] = useState([]);
-  const [street, setStreet] = useState("");
 
   const handleChecked = (e) => {
     const name = e.target.name;
@@ -35,6 +34,7 @@ const Form = (props) => {
     initialValues: {
       name: "",
       phone: "",
+      street: "",
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -44,6 +44,7 @@ const Form = (props) => {
       phone: Yup.string()
         .required("* Trường này bắt buộc")
         .matches(/(((\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\b/, "* Số không hợp lệ"),
+      street: Yup.string().required("* Trường này bắt buộc"),
     }),
 
     onSubmit: (values) => {
@@ -53,11 +54,12 @@ const Form = (props) => {
           cartProducts,
           name: formik.values.name,
           phone: formik.values.phone,
+          street: formik.values.street,
           gender,
           provinces,
           district,
           wards,
-          street,
+
           totalPrice,
         })
       );
@@ -110,7 +112,11 @@ const Form = (props) => {
                 onChange={formik.handleChange}
               />
               {formik.touched.name && formik.errors.name ? (
-                <p style={{ color: "red" }}>{formik.errors.name}</p>
+                <p
+                  style={{ color: "red", textAlign: "start", fontSize: "14px" }}
+                >
+                  {formik.errors.name}
+                </p>
               ) : (
                 ""
               )}
@@ -128,7 +134,11 @@ const Form = (props) => {
                 onChange={formik.handleChange}
               />
               {formik.touched.phone && formik.errors.phone ? (
-                <p style={{ color: "red" }}>{formik.errors.phone}</p>
+                <p
+                  style={{ color: "red", textAlign: "start", fontSize: "14px" }}
+                >
+                  {formik.errors.phone}
+                </p>
               ) : (
                 ""
               )}
@@ -164,11 +174,22 @@ const Form = (props) => {
             />
 
             <input
+              id="street"
+              name="street"
               className="address_input"
               placeholder="Số nhà, tên đường"
-              onChange={(e) => setStreet(e.target.value)}
-              value={street}
+              value={formik.values.street}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
             />
+
+            {formik.touched.street && formik.errors.street ? (
+              <p style={{ color: "red", textAlign: "start", fontSize: "14px" }}>
+                {formik.errors.street}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
 
           <button type="submit" className="checkout_btn">

@@ -1,11 +1,14 @@
 import "./CheckOutPage.scss";
+import { useState } from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { submitFormSelector } from "../../../redux/selector";
 import { formatVnd } from "../../../helper";
+import Modal from "../../modals/Modal";
 
 const CheckOutPage = () => {
+  const [openModal, setOpenModal] = useState(false);
   const infoClient = useSelector(submitFormSelector);
   const {
     cartProducts,
@@ -21,6 +24,7 @@ const CheckOutPage = () => {
   //   console.log(infoClient);
   return (
     <>
+      {openModal && <Modal openModal={openModal} setOpenModal={setOpenModal} />}
       <div className="checkOut_wrap">
         <div className="checkOut_container">
           <div className="success_message">
@@ -53,7 +57,10 @@ const CheckOutPage = () => {
               Tổng tiền: <span>{formatVnd(totalPrice)}</span>
             </li>
           </div>
-          <button className="cancel_order">
+          <button
+            onClick={() => setOpenModal(!openModal)}
+            className="cancel_order"
+          >
             <p>Hủy đơn hàng</p>
           </button>
           <div className="contact">
