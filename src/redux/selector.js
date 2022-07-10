@@ -41,6 +41,8 @@ export const filterPriceSelector = (state) => state.filterPrice;
 export const filterSortingSelector = (state) => state.filterSorting;
 export const detailProductSelector = (state) => state.detailProduct;
 export const cartProductSelector = (state) => state.cartProduct;
+export const cartAmountSelector = (state) => state.cartAmount;
+export const submitFormSelector = (state) => state.submitForm;
 export const totalPriceSelector = (state) => {
   const totalPrice = state.cartProduct.reduce(
     (acc, cur) => acc + cur.amount * cur.price,

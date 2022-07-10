@@ -1,0 +1,91 @@
+.form_wrap {
+  .form_title {
+    margin: 8px 0 10px 0;
+
+    font-weight: 500;
+    text-align: start;
+  }
+  .form_radio {
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+
+    .male_radio {
+      margin-right: 20px;
+      #male {
+        margin-right: 8px;
+      }
+    }
+    .female_radio {
+      #female {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .form_input-name-phone {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .address_text {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 8px 0 0 0;
+    text-align: start;
+  }
+
+  .address_input {
+    width: 98.6%;
+    font-size: 16px;
+    padding: 9px 4px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    outline-color: #2684ff;
+  }
+
+  .select_address {
+    width: 100%;
+  }
+  .link_checkout {
+    text-decoration: none;
+  }
+  .checkout_btn {
+    width: 75%;
+    margin: 20px auto;
+    padding: 8px 0;
+    border-radius: 5px;
+    background-image: linear-gradient(45deg, #fc4a1a, #f7b733);
+    cursor: pointer;
+    border: none;
+    p {
+      color: var(--white-color);
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  .note {
+    font-size: 14px;
+    color: var(--content-color);
+  }
+}
+
+.select_style {
+  margin: 1rem 0;
+  border-color: #dfdfdf;
+  width: 100%;
+
+  span {
+    display: none;
+  }
+}
+
+.input_style {
+  width: 31.5rem;
+  font-size: 16px;
+  padding: 9px 4px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  outline-color: #2684ff;
+}

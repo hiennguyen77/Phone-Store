@@ -12,7 +12,7 @@ export const AmountCounter = (props) => {
             <AiOutlineMinus />
           </i>
         </div>
-        <h5>{amount}</h5>
+        <p>{amount}</p>
         <div className="plus-btn">
           <i onClick={(...args) => onIncrement(...args)}>
             <AiOutlinePlus />

@@ -14,6 +14,8 @@ const initialState = {
   filterSorting: sorting[0],
   detailProduct: {},
   cartProduct: [],
+
+  submitForm: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -117,6 +119,13 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         cartProduct: newCart,
+      };
+    }
+    case types.SUBMIT_FORM: {
+      return {
+        ...state,
+        submitForm: action.payload,
+        cartProduct: [],
       };
     }
 

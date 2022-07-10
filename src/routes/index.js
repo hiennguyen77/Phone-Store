@@ -7,9 +7,13 @@ const CartPage = lazy(() => import("../components/pages/cartPage/CartPage"));
 const DetailPage = lazy(() =>
   import("../components/pages/detailPage/DetailPage")
 );
+const CheckOutPage = lazy(() =>
+  import("../components/pages/checkoutPage/CheckOutPage")
+);
 
 export const publicRoutes = [
   { path: "/", component: HomePage },
   { path: "/cart", component: CartPage },
   { path: "/detail/:productId", component: DetailPage },
+  { path: "/checkout", component: CheckOutPage },
 ];
