@@ -1,8 +1,10 @@
 .searchList_wrap {
+  margin-top: 5px;
   overflow-y: scroll;
   width: 400px;
-  height: 400px;
-  border: 1px solid var(--border-color);
+  height: 300px;
+  border: none;
+  background-color: var(--white-color);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   .searchList_container {
@@ -46,5 +48,20 @@
         cursor: pointer;
       }
     }
+  }
+}
+.no_product {
+  margin-top: 5px;
+  width: 400px;
+  height: 40px;
+  border: none;
+  background-color: var(--white-color);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  p {
+    text-align: center;
+    line-height: 40px;
+    color: var(--content-color);
+    font-size: 14px;
   }
 }

@@ -35,7 +35,7 @@ const Header = () => {
               placeholder="Bạn cần tìm..."
             />
             <i>
-              <BiSearch />
+              <BiSearch className={inputText ? "search_input" : ""} />
             </i>
             {inputText && (
               <div className="searchList">

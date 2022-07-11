@@ -45,6 +45,7 @@ const HomePage = () => {
     <>
       <div className="homePage_wrap grid wide">
         <Brand />
+
         <div className="filter" style={{ display: "flex" }}>
           <PriceFilter />
           <SortFilter />

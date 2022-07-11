@@ -33,8 +33,8 @@ const SearchList = (props) => {
 
   return (
     <>
-      <div className="searchList_wrap">
-        {productSearch.length > 0 ? (
+      {productSearch.length > 0 ? (
+        <div className="searchList_wrap">
           <div className="searchList_container">
             {productSearch.map((product, index) => (
               <div
@@ -55,10 +55,12 @@ const SearchList = (props) => {
               </div>
             ))}
           </div>
-        ) : (
-          "không có sp"
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="no_product">
+          <p>Không tìm thấy sản phẩm.</p>
+        </div>
+      )}
     </>
   );
 };

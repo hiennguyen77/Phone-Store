@@ -18,6 +18,8 @@
   top: 20rem;
   left: 48rem;
   padding: 8px;
+  animation: openModal;
+  animation-duration: 0.5s;
 
   h2 {
     font-size: 18px;
@@ -72,6 +74,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: openModal;
+  animation-duration: 0.5s;
   i {
     font-size: 40px;
     color: #00c921;
@@ -79,5 +83,16 @@
   h2 {
     font-size: 18px;
     font-weight: 600;
+  }
+}
+
+@keyframes openModal {
+  from {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

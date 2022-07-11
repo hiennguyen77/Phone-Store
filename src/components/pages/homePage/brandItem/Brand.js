@@ -19,16 +19,16 @@ const Brand = () => {
 
   return (
     <>
-      <div className="brand_wrap">
-        <div className="brand_container">
+      <div className="brand_wrap grid wide">
+        <div className="brand_container row no-gutters">
           {brands.map((brand) => (
             <div
               onClick={() => handleClick(brand.id)}
               title={brand.name}
               className={
                 brandFilter.includes(brand.id)
-                  ? "brand_item active"
-                  : "brand_item"
+                  ? "brand_item active col l-2"
+                  : "brand_item col l-2"
               }
               key={brand.id}
             >

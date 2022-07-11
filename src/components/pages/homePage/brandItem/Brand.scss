@@ -1,21 +1,17 @@
 .brand_wrap {
   .brand_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 10px 0;
+    margin: 20px 0;
     width: 100%;
 
     .brand_item {
       user-select: none;
-      width: 16rem;
-      max-height: 4rem;
-      height: 4rem;
+      width: 10rem;
+      max-width: 170.4px;
+      max-height: 3.5rem;
+      height: 3.5rem;
       border: 1px solid var(--border-color);
-      margin: 6px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin: -1px -1px 0 0;
+
       cursor: pointer;
       img {
         width: 100%;
@@ -27,7 +23,34 @@
     .brand_item.active {
       border: 1px solid #006eff;
       z-index: 2;
-      transition: all 0.3s linear;
+      // transition: all 0.3s linear;
+      position: relative;
+
+      &::before {
+        content: "✓";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 3;
+        line-height: 1;
+        color: #fff;
+        transition: all 0.3s linear;
+        font-size: 14px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -16px;
+        left: -16px;
+        z-index: 2;
+        line-height: 1;
+        border: solid;
+        border-width: 15px 15px;
+        border-color: transparent transparent #006eff transparent;
+        transform: rotate(-45deg);
+        transition: all 0.3s linear;
+      }
     }
   }
 }
