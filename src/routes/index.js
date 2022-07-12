@@ -11,9 +11,14 @@ const CheckOutPage = lazy(() =>
   import("../components/pages/checkoutPage/CheckOutPage")
 );
 
+const NotFoundPage = lazy(() =>
+  import("../components/pages/notFoundPage/NotFoundPage.js")
+);
+
 export const publicRoutes = [
   { path: "/", component: HomePage },
   { path: "/cart", component: CartPage },
   { path: "/detail/:productId", component: DetailPage },
   { path: "/checkout", component: CheckOutPage },
+  { path: "*", component: NotFoundPage },
 ];

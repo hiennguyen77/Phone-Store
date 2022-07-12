@@ -54,20 +54,29 @@ const HomePage = () => {
           <PriceFilter />
           <SortFilter />
         </div>
-
-        <div className="product row no-gutters">
-          {showProduct.map((product, index) => (
-            <div key={index} className="col l-2-4 m-4 c-6">
-              <CardItem
-                image={product.image}
-                name={product.name}
-                price={product.price}
-                crossPrice={product.crossPrice}
-                id={product.id}
-              />
-            </div>
-          ))}
-        </div>
+        {showProduct.length > 0 ? (
+          <div className="product row no-gutters">
+            {showProduct.map((product, index) => (
+              <div key={index} className="col l-2-4 m-4 c-6">
+                <CardItem
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  crossPrice={product.crossPrice}
+                  id={product.id}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="no_showProduct_wrap">
+            <img
+              src="https://www.iamqatar.qa/assets/images/no-products-found.png"
+              alt="no-produt"
+            />
+            <p className="no_showProduct">Không có sản phẩm này.</p>
+          </div>
+        )}
 
         <div className="viewMoreBtn">
           {products.length - showProduct.length > 0 ? <ViewMore /> : ""}
