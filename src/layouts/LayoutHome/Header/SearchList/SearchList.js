@@ -15,6 +15,7 @@ const SearchList = (props) => {
   const dispatch = useDispatch();
   const products = useSelector(productSelector);
   const searchText = useSelector(searchSelector);
+
   const productSearch = products.filter((product) => {
     return product.name.toLowerCase().includes(searchText);
   });

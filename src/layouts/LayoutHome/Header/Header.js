@@ -16,8 +16,9 @@ const Header = () => {
   const cartProduct = useSelector(cartProductSelector);
 
   const handleSearchText = (e) => {
-    setInputText(e.target.value.trim());
-    dispatch(searchProduct(e.target.value));
+    setInputText(e.target.value);
+
+    dispatch(searchProduct(e.target.value.trim()));
   };
 
   return (
