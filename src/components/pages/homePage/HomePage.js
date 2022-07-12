@@ -2,17 +2,21 @@ import "./HomePage.scss";
 
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import CardItem from "../../cardProducts/CardItem";
+import { useSelector } from "react-redux/es/exports";
+import { useEffect } from "react";
+
 import Brand from "./brandItem/Brand";
 import PriceFilter from "./Filter/PriceFilter";
 import SortFilter from "./Filter/SortFilter";
-import CardItem from "../../cardProducts/CardItem";
-import { useSelector } from "react-redux/es/exports";
-import { productSelector, showMoreSelector } from "../../../redux/selector";
-import { useEffect } from "react";
 import {
-  fetchProductFailure,
+  productSelector,
+  showMoreSelector,
+} from "../../../redux/products/selector";
+import {
   fetchProductSuccess,
-} from "../../../redux/actions";
+  fetchProductFailure,
+} from "../../../redux/products/action";
 import ViewMore from "./viewMoreBtn/ViewMore";
 
 const HomePage = () => {
@@ -27,10 +31,10 @@ const HomePage = () => {
         const res = await axios.get(
           "https://62c04057c134cf51cecbc33c.mockapi.io/products/"
         );
+        // console.log(">> data", res.data);
         dispatch(fetchProductSuccess(res.data));
-        // console.log(res.data);
       } catch (error) {
-        console.log(error.message);
+        console.log("error", error.message);
         dispatch(fetchProductFailure(error.message));
       }
     };

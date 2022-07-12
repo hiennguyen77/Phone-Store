@@ -7,7 +7,7 @@ import { AmountCounter } from "./amount/Amount";
 import {
   cartProductSelector,
   totalPriceSelector,
-} from "../../../redux/selector";
+} from "../../../redux/cart/selector.js";
 
 import { formatVnd } from "../../../helper";
 import Form from "./form/Form";
@@ -16,7 +16,7 @@ import {
   setAddCartProduct,
   setDeleteCartProduct,
   takeout1Product,
-} from "../../../redux/actions";
+} from "../../../redux/cart/action.js";
 
 const CartPage = () => {
   const dispatch = useDispatch();

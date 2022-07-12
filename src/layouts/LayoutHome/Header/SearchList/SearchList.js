@@ -2,9 +2,10 @@
 import "./SearchList.scss";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { searchSelector, productSelector } from "../../../../redux/selector";
+import { searchSelector } from "../../../../redux/filter-sorting/selector";
+import { productSelector } from "../../../../redux/products/selector";
 import { formatVnd } from "../../../../helper";
-import { setDetailProduct } from "../../../../redux/actions";
+import { setDetailProduct } from "../../../../redux/cart/action";
 
 const SearchList = (props) => {
   const { setInputText } = props;

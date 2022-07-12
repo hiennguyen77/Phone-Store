@@ -2,9 +2,9 @@ import "./DetailPage.scss";
 import { Link } from "react-router-dom";
 import { detailData } from "./detail-data";
 import { useSelector, useDispatch } from "react-redux";
-import { detailProductSelector } from "../../../redux/selector";
+import { detailProductSelector } from "../../../redux/cart/selector";
 import { formatVnd } from "../../../helper";
-import { setAddCartProduct } from "../../../redux/actions";
+import { setAddCartProduct } from "../../../redux/cart/action";
 const DetailPage = () => {
   const detailProduct = useSelector(detailProductSelector);
   const dispatch = useDispatch();

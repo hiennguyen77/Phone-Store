@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import "./ViewMore.scss";
 
 import { BsArrowDownShort } from "react-icons/bs";
-import { showMore } from "../../../../redux/actions";
+import { showMore } from "../../../../redux/products/action";
 
 const ViewMore = (props) => {
   const [showMorePlus, setShowMorePlus] = useState(15);

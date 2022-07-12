@@ -6,8 +6,8 @@ import "./Header.scss";
 import { BiSearch } from "react-icons/bi";
 import { BsFillBagFill } from "react-icons/bs";
 import SearchList from "./SearchList/SearchList";
-import { searchProduct } from "../../../redux/actions";
-import { cartProductSelector } from "../../../redux/selector";
+import { searchProduct } from "../../../redux/filter-sorting/action";
+import { cartProductSelector } from "../../../redux/cart/selector";
 
 const Header = () => {
   const [inputText, setInputText] = useState("");

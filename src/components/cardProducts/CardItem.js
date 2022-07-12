@@ -2,7 +2,7 @@ import "./CardItem.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { formatVnd } from "../../helper";
-import { setDetailProduct } from "../../redux/actions";
+import { setDetailProduct } from "../../redux/cart/action";
 
 const CardItem = (props) => {
   const { image, name, price, crossPrice, id } = props;

@@ -1,8 +1,8 @@
 import Select from "react-select";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setFilterPrice } from "../../../../redux/actions";
-import { filterPriceSelector } from "../../../../redux/selector";
+import { setFilterPrice } from "../../../../redux/filter-sorting/action";
+import { filterPriceSelector } from "../../../../redux/filter-sorting/selector";
 
 import "./Filter.scss";
 import { filterPriceData } from "./data";

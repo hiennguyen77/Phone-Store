@@ -2,8 +2,8 @@ import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import "./Filter.scss";
 import { sorting } from "./data";
-import { setSorting } from "../../../../redux/actions";
-import { filterSortingSelector } from "../../../../redux/selector";
+import { setSorting } from "../../../../redux/filter-sorting/action";
+import { filterSortingSelector } from "../../../../redux/filter-sorting/selector";
 
 const SortFilter = () => {
   const dispatch = useDispatch();

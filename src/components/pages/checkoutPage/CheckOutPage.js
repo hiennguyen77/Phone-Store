@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { submitFormSelector } from "../../../redux/selector";
+import { submitFormSelector } from "../../../redux/cart/selector";
 import { formatVnd } from "../../../helper";
 import Modal from "../../modals/Modal";
 

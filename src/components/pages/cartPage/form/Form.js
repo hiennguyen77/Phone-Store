@@ -5,7 +5,7 @@ import Select from "react-select";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { getProvinces, getDistricts, getWards } from "./formUtils";
-import { submitForm } from "../../../../redux/actions";
+import { submitForm } from "../../../../redux/cart/action";
 
 import "./Form.scss";
 

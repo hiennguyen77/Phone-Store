@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import "./Brand.scss";
 import { brands } from "../../../../mock-data/brand";
-import { filterBrand } from "../../../../redux/actions";
-import { filterBrandSelector } from "../../../../redux/selector";
+import { filterBrand } from "../../../../redux/filter-sorting/action";
+import { filterBrandSelector } from "../../../../redux/filter-sorting/selector";
 
 const Brand = () => {
   const dispatch = useDispatch();
