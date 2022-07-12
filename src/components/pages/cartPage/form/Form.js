@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { getProvinces, getDistricts, getWards } from "./formUtils";
 import { submitForm } from "../../../../redux/cart/action";
+// import cartSlice from "../../../../redux/cart/cartSlice";
 
 import "./Form.scss";
 
@@ -65,7 +66,7 @@ const Form = (props) => {
       );
 
       navigate("/checkout");
-      console.log(cartProducts);
+      // console.log(cartProducts);
     },
   });
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Brand.scss";
 import { brands } from "../../../../mock-data/brand";
 import { filterBrand } from "../../../../redux/filter-sorting/action";
+// import filterSlice from "../../../../redux/filter-sorting/filterSlice";
 import { filterBrandSelector } from "../../../../redux/filter-sorting/selector";
 
 const Brand = () => {

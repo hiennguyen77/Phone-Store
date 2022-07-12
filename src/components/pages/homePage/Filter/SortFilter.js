@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Filter.scss";
 import { sorting } from "./data";
 import { setSorting } from "../../../../redux/filter-sorting/action";
+// import filterSlice from "../../../../redux/filter-sorting/filterSlice";
 import { filterSortingSelector } from "../../../../redux/filter-sorting/selector";
 
 const SortFilter = () => {

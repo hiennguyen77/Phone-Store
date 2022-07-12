@@ -2,6 +2,7 @@ import Select from "react-select";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setFilterPrice } from "../../../../redux/filter-sorting/action";
+// import filterSlice from "../../../../redux/filter-sorting/filterSlice";
 import { filterPriceSelector } from "../../../../redux/filter-sorting/selector";
 
 import "./Filter.scss";

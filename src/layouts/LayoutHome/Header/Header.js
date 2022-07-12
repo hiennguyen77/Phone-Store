@@ -7,6 +7,7 @@ import { BiSearch } from "react-icons/bi";
 import { BsFillBagFill } from "react-icons/bs";
 import SearchList from "./SearchList/SearchList";
 import { searchProduct } from "../../../redux/filter-sorting/action";
+// import filterSlice from "../../../redux/filter-sorting/filterSlice";
 import { cartProductSelector } from "../../../redux/cart/selector";
 
 const Header = () => {

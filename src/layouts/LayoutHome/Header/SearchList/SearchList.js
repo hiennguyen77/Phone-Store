@@ -1,5 +1,7 @@
 // import { useState } from "react";
 import "./SearchList.scss";
+import { useDebounce } from "use-debounce";
+
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { searchSelector } from "../../../../redux/filter-sorting/selector";
@@ -16,6 +18,8 @@ const SearchList = (props) => {
   const productSearch = products.filter((product) => {
     return product.name.toLowerCase().includes(searchText);
   });
+
+  const [productSearchDebounce] = useDebounce(productSearch, 500);
 
   const handleToDetail = (product) => {
     const { name, image, price, crossPrice, id } = product;
@@ -34,10 +38,10 @@ const SearchList = (props) => {
 
   return (
     <>
-      {productSearch.length > 0 ? (
+      {productSearchDebounce.length > 0 ? (
         <div className="searchList_wrap">
           <div className="searchList_container">
-            {productSearch.map((product, index) => (
+            {productSearchDebounce.map((product, index) => (
               <div
                 onClick={() => handleToDetail(product)}
                 key={index}

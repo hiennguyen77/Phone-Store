@@ -17,6 +17,7 @@ import {
   setDeleteCartProduct,
   takeout1Product,
 } from "../../../redux/cart/action.js";
+// import cartSlice from "../../../redux/cart/cartSlice";
 
 const CartPage = () => {
   const dispatch = useDispatch();

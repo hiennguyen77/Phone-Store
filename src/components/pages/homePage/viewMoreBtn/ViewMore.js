@@ -4,6 +4,7 @@ import "./ViewMore.scss";
 
 import { BsArrowDownShort } from "react-icons/bs";
 import { showMore } from "../../../../redux/products/action";
+// import productSlice from "../../../../redux/products/productSlice";
 
 const ViewMore = (props) => {
   const [showMorePlus, setShowMorePlus] = useState(15);

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { formatVnd } from "../../helper";
 import { setDetailProduct } from "../../redux/cart/action";
+// import cartSlice from "../../redux/cart/cartSlice";
 
 const CardItem = (props) => {
   const { image, name, price, crossPrice, id } = props;

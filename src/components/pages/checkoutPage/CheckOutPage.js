@@ -35,10 +35,10 @@ const CheckOutPage = () => {
           </div>
           <div className="thank_text">
             <p>
-              Cảm ơn<span>{gender.gender}</span>đã cho Phonee cơ hội được phục
-              vụ. Trong 10 phút, nhân viên Phonee sẽ{" "}
+              Cảm ơn<span>{gender.gender}</span>đã cho Phone Store cơ hội được
+              phục vụ. Trong 10 phút, nhân viên Phone Store sẽ{" "}
               <span>gửi tin nhắn hoặc gọi điện</span>
-              xác nhận giao hàng cho anh.
+              xác nhận giao hàng cho {gender.gender}.
             </p>
           </div>
 

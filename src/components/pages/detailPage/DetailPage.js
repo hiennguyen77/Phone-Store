@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { detailProductSelector } from "../../../redux/cart/selector";
 import { formatVnd } from "../../../helper";
 import { setAddCartProduct } from "../../../redux/cart/action";
+// import cartSlice from "../../../redux/cart/cartSlice";
 const DetailPage = () => {
   const detailProduct = useSelector(detailProductSelector);
   const dispatch = useDispatch();

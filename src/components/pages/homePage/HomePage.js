@@ -17,13 +17,16 @@ import {
   fetchProductSuccess,
   fetchProductFailure,
 } from "../../../redux/products/action";
+// import productSlice from "../../../redux/products/productSlice";
 import ViewMore from "./viewMoreBtn/ViewMore";
+import { filterSortingSelector } from "../../../redux/filter-sorting/selector";
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const products = useSelector(productSelector);
   const showMore = useSelector(showMoreSelector);
   const showProduct = products.slice(0, showMore);
+  const sortingProduct = useSelector(filterSortingSelector);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -31,7 +34,7 @@ const HomePage = () => {
         const res = await axios.get(
           "https://62c04057c134cf51cecbc33c.mockapi.io/products/"
         );
-        // console.log(">> data", res.data);
+
         dispatch(fetchProductSuccess(res.data));
       } catch (error) {
         console.log("error", error.message);
@@ -40,10 +43,7 @@ const HomePage = () => {
     };
     getProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // console.log(">>>product", products);
-  // console.log(">>>product", showProduct);
+  }, [sortingProduct]);
 
   return (
     <>
@@ -57,7 +57,7 @@ const HomePage = () => {
 
         <div className="product row no-gutters">
           {showProduct.map((product, index) => (
-            <div key={index} className="col l-2-4">
+            <div key={index} className="col l-2-4 m-4 c-6">
               <CardItem
                 image={product.image}
                 name={product.name}
