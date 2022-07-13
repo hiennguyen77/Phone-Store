@@ -1,19 +1,36 @@
+@import "../../../Responsive/mixin.scss";
 .Footer_wrap {
   background-color: var(--primary);
   .footer_container {
     padding: 20px;
+    @include responsive_320 {
+      padding: 14px;
+    }
 
     .footer_phone {
       display: flex;
       align-items: center;
+
       p {
         font-size: 14px;
         color: var(--white-color);
         margin-right: 10px;
+        @include responsive_375 {
+          font-size: 12px;
+        }
+        @include responsive_320 {
+          font-size: 12px;
+        }
       }
       h4 {
         color: var(--white-color);
         font-weight: 500;
+        @include responsive_375 {
+          font-size: 12px;
+        }
+        @include responsive_320 {
+          font-size: 12px;
+        }
       }
     }
     .footer_address {
@@ -23,11 +40,23 @@
       p {
         font-size: 14px;
         color: var(--white-color);
+        @include responsive_375 {
+          font-size: 12px;
+        }
+        @include responsive_320 {
+          font-size: 12px;
+        }
       }
       h4 {
         margin-right: 10px;
         color: var(--white-color);
         font-weight: 500;
+        @include responsive_375 {
+          font-size: 12px;
+        }
+        @include responsive_320 {
+          font-size: 12px;
+        }
       }
     }
 
@@ -35,6 +64,12 @@
       text-align: start;
       color: var(--white-color);
       font-size: 14px;
+      @include responsive_375 {
+        font-size: 12px;
+      }
+      @include responsive_320 {
+        font-size: 12px;
+      }
     }
   }
 }

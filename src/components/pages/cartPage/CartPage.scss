@@ -1,4 +1,15 @@
+@import "../../../Responsive/mixin.scss";
+
 .cartPage_wrap {
+  @include responsive_425 {
+    max-width: 40rem;
+  }
+  @include responsive_375 {
+    max-width: 35rem;
+  }
+  @include responsive_320 {
+    max-width: 30rem;
+  }
   max-width: 70rem;
   margin: 30px auto;
 
@@ -10,6 +21,9 @@
 
     p {
       font-size: 14px;
+      @include responsive_320 {
+        font-size: 12px;
+      }
     }
 
     .link_back_home {
@@ -34,6 +48,10 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 60px;
+      align-items: center;
+      @include responsive_320 {
+        flex-wrap: wrap;
+      }
 
       .product_wrap {
         display: flex;
@@ -78,13 +96,37 @@
         margin-left: 20px;
 
         h4 {
+          @include responsive_425 {
+            font-size: 14px;
+          }
+          @include responsive_375 {
+            font-size: 14px;
+          }
+          @include responsive_320 {
+            font-size: 14px;
+          }
           font-size: 16px;
           font-weight: 600;
           color: var(--content-color);
+
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
         }
       }
 
       .price_pr {
+        @include responsive_425 {
+          font-size: 14px;
+        }
+        @include responsive_375 {
+          font-size: 14px;
+        }
+        @include responsive_320 {
+          font-size: 14px;
+          margin-left: 50%;
+        }
         color: var(--primary);
       }
     }

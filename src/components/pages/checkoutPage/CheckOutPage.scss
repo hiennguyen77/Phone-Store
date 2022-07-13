@@ -1,4 +1,15 @@
+@import "../../../Responsive/mixin.scss";
+
 .checkOut_wrap {
+  @include responsive_425 {
+    width: 40rem;
+  }
+  @include responsive_375 {
+    width: 35rem;
+  }
+  @include responsive_320 {
+    width: 30rem;
+  }
   max-width: 70rem;
   width: 70rem;
   margin: 30px auto;
@@ -111,6 +122,18 @@
           width: 10rem;
           height: 10rem;
           margin-right: 8px;
+          @include responsive_425 {
+            width: 5rem;
+            height: 5rem;
+          }
+          @include responsive_375 {
+            width: 5rem;
+            height: 5rem;
+          }
+          @include responsive_320 {
+            width: 5rem;
+            height: 5rem;
+          }
         }
 
         .name_amount {
@@ -120,9 +143,21 @@
           p:nth-child(1) {
             font-size: 16px;
             font-weight: 500;
+            @include responsive_375 {
+              font-size: 12px;
+            }
+            @include responsive_320 {
+              font-size: 12px;
+            }
           }
           p:nth-child(2) {
             font-size: 14px;
+            @include responsive_375 {
+              font-size: 12px;
+            }
+            @include responsive_320 {
+              font-size: 12px;
+            }
 
             span {
               font-weight: 600;
@@ -142,6 +177,9 @@
     .back_home_link {
       text-decoration: none;
       .back_home {
+        @include responsive_320 {
+          width: 20rem;
+        }
         border: 1px solid var(--primary);
         max-width: 26rem;
         width: 26rem;

@@ -1,3 +1,5 @@
+@import "../../Responsive/mixin.scss";
+
 .card_link {
   text-decoration: none;
   color: var(--content-color);
@@ -28,7 +30,11 @@
   }
 
   .cardItem_container {
-    padding: 30px;
+    padding: 10px;
+
+    @include responsive_320 {
+      padding: 5px;
+    }
   }
   .cardItem_img {
     img {
@@ -49,11 +55,33 @@
   .cardItem_price {
     span:nth-child(1) {
       color: var(--primary);
+      margin-right: 8px;
     }
+
     span {
       font-size: 16px;
       font-weight: 300;
-      margin-right: 8px;
+      @include responsive_1200 {
+        font-size: 14px;
+      }
+      @include responsive_1024 {
+        font-size: 14px;
+      }
+      @include responsive_992 {
+        font-size: 14px;
+      }
+      @include responsive_768 {
+        font-size: 14px;
+      }
+      @include responsive_425 {
+        font-size: 14px;
+      }
+      @include responsive_375 {
+        font-size: 13px;
+      }
+      @include responsive_320 {
+        font-size: 12px;
+      }
     }
 
     .sale_price {

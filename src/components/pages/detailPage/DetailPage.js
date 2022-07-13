@@ -28,13 +28,13 @@ const DetailPage = () => {
     <>
       <div className="detailPage_wrap grid wide">
         <h1 className="detail_name">{detailProduct.name}</h1>
-        <div className="row no-gutters">
-          <div className="col l-6">
+        <div className="detail_container">
+          <div className="detail_left">
             <div className="detail_img">
               <img src={detailProduct.image} alt="" />
             </div>
           </div>
-          <div className="col l-6">
+          <div className="detail_right">
             <div className="detail_price">
               <h1 className="detail_sale">{formatVnd(detailProduct.price)}</h1>
               <h1 className="detail_through">

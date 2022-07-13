@@ -1,3 +1,5 @@
+@import "../../../../Responsive/mixin.scss";
+
 .form_wrap {
   .form_title {
     margin: 8px 0 10px 0;
@@ -27,6 +29,30 @@
   .form_input-name-phone {
     display: flex;
     justify-content: space-between;
+    @include responsive_425 {
+      display: block;
+    }
+    @include responsive_375 {
+      display: block;
+    }
+    @include responsive_320 {
+      display: block;
+    }
+
+    input {
+      @include responsive_425 {
+        width: 97.6%;
+        margin: 5px 0;
+      }
+      @include responsive_375 {
+        width: 97.6%;
+        margin: 5px 0;
+      }
+      @include responsive_320 {
+        width: 97.6%;
+        margin: 5px 0;
+      }
+    }
   }
 
   .address_text {
@@ -37,6 +63,15 @@
   }
 
   .address_input {
+    @include responsive_425 {
+      width: 97.6%;
+    }
+    @include responsive_375 {
+      width: 97.6%;
+    }
+    @include responsive_320 {
+      width: 97.6%;
+    }
     width: 98.6%;
     font-size: 16px;
     padding: 9px 4px;

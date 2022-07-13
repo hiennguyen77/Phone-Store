@@ -28,8 +28,8 @@ const Brand = () => {
               title={brand.name}
               className={
                 brandFilter.includes(brand.id)
-                  ? "brand_item active col l-2"
-                  : "brand_item col l-2"
+                  ? "brand_item active col l-2 c-2 "
+                  : "brand_item col l-2  c-2"
               }
               key={brand.id}
             >

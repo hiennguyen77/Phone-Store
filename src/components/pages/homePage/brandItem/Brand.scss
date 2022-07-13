@@ -1,3 +1,5 @@
+@import "../../../../Responsive/mixin.scss";
+
 .brand_wrap {
   .brand_container {
     margin: 20px 0;
@@ -5,12 +7,34 @@
 
     .brand_item {
       user-select: none;
-      width: 10rem;
+
       max-width: 170.4px;
+      @include responsive_1200 {
+        max-width: 163px;
+      }
+      @include responsive_1024 {
+        max-width: 163px;
+      }
+      @include responsive_992 {
+        max-width: 127px;
+      }
+      @include responsive_768 {
+        max-width: 127px;
+      }
+      @include responsive_425 {
+        max-width: 83.4px;
+      }
+      @include responsive_375 {
+        max-width: 81.4px;
+      }
+      @include responsive_320 {
+        max-width: 62.4px;
+      }
       max-height: 3.5rem;
       height: 3.5rem;
       border: 1px solid var(--border-color);
       margin: -1px -1px 0 0;
+      flex-grow: 1;
 
       cursor: pointer;
       img {

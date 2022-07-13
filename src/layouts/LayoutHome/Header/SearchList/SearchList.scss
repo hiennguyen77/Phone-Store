@@ -1,3 +1,5 @@
+@import "../../../../Responsive/mixin.scss";
+
 .searchList_wrap {
   margin-top: 5px;
   overflow-y: scroll;
@@ -6,6 +8,15 @@
   border: none;
   background-color: var(--white-color);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  @include responsive_425 {
+    width: 300px;
+  }
+  @include responsive_375 {
+    width: 300px;
+  }
+  @include responsive_320 {
+    width: 280px;
+  }
 
   .searchList_container {
     width: 100%;

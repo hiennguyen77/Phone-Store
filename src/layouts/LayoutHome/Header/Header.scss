@@ -1,3 +1,4 @@
+@import "../../../Responsive/mixin.scss";
 .header_wrap {
   background-color: var(--primary);
 
@@ -8,6 +9,19 @@
 
     .logo_link {
       text-decoration: none;
+    }
+    .logo {
+      h1 {
+        @include responsive_425 {
+          font-size: 20px;
+        }
+        @include responsive_375 {
+          font-size: 18px;
+        }
+        @include responsive_320 {
+          font-size: 12px;
+        }
+      }
     }
 
     .logo,
@@ -25,11 +39,25 @@
       padding: 8px 5px 8px 5px;
       border: none;
       border-radius: 4px;
+      @include responsive_425 {
+        padding: 4px 5px 4px 5px;
+      }
+      @include responsive_375 {
+        padding: 4px 5px 4px 5px;
+      }
+      @include responsive_320 {
+        padding: 4px 5px 4px 5px;
+      }
     }
 
     i {
       position: absolute;
       font-size: 20px;
+      @include responsive_320 {
+        font-size: 16px;
+        top: 3px;
+        left: 16rem;
+      }
       color: var(--border-color);
       left: 15rem;
       top: 2px;
@@ -44,6 +72,15 @@
       position: absolute;
       right: -111px;
       z-index: 2;
+      @include responsive_425 {
+        right: -60px;
+      }
+      @include responsive_375 {
+        right: -50px;
+      }
+      @include responsive_320 {
+        right: -40px;
+      }
     }
   }
 
@@ -51,7 +88,33 @@
     text-decoration: none;
   }
   .cart_icon {
+    span {
+      @include responsive_425 {
+        font-size: 14px;
+        padding-top: 2px;
+      }
+      @include responsive_375 {
+        font-size: 14px;
+        padding-top: 4px;
+      }
+      @include responsive_320 {
+        font-size: 14px;
+        padding-top: 4px;
+      }
+    }
     i {
+      @include responsive_425 {
+        font-size: 16px;
+        padding-top: 2px;
+      }
+      @include responsive_375 {
+        font-size: 16px;
+        padding-top: 4px;
+      }
+      @include responsive_320 {
+        font-size: 16px;
+        padding-top: 4px;
+      }
       font-size: 20px;
     }
     display: flex;
