@@ -4,6 +4,7 @@
   .detail_container {
     display: flex;
     justify-content: center;
+    justify-content: space-between;
     @include responsive_992 {
       flex-direction: column;
       align-items: center;
@@ -32,11 +33,27 @@
     max-width: 500px;
   }
   .detail_name {
+    @include responsive_992 {
+      padding: 4px 0;
+      text-align: center;
+    }
+    @include responsive_768 {
+      padding: 4px 0;
+      text-align: center;
+    }
+    @include responsive_425 {
+      padding: 4px 0;
+      text-align: center;
+    }
     @include responsive_375 {
+      padding: 4px 0;
+      text-align: center;
       font-size: 25px;
     }
     @include responsive_320 {
       font-size: 20px;
+      padding: 4px 0;
+      text-align: center;
     }
     font-size: 35px;
     font-weight: 400;
@@ -47,6 +64,10 @@
   }
 
   .detail_img {
+    width: 47rem;
+    object-fit: scale-down;
+    margin-top: 60px;
+
     @include responsive_1200 {
       width: 47rem;
       object-fit: scale-down;
@@ -76,7 +97,9 @@
       object-fit: scale-down;
     }
     img {
+      width: 100%;
       transform: scale(0.9);
+
       @include responsive_1200 {
         width: 100%;
       }
@@ -187,6 +210,7 @@
   }
 
   .buy_btn {
+    margin-bottom: 30px;
     width: 100%;
     padding: 16px 0;
     font-size: 20px;
